@@ -86,6 +86,7 @@ function getCurrentLang() {
   return localizations[currentLangCode]
 }
 
+    let isReset = false
     let user_taps = 0
     let moneys = 0
 
@@ -101,6 +102,7 @@ function getCurrentLang() {
 
     function mainLogic() {
 
+        isReset = false
         user_taps += user_power
         moneys += user_power_money
 
@@ -142,6 +144,7 @@ function getCurrentLang() {
     function clear_warning_yes() {
       user_taps = 0
       user_power = 1
+      isReset = true
       gameInput.value = getCurrentLang().ClicksReboot()
       gameInput.style.color = "rgba(0, 0, 0, 0.5)"
       gameButton.disabled = false
@@ -293,7 +296,10 @@ localizationItem.forEach((button) => {
     myButton.textContent = getCurrentLang().myButton()
     shopButton.textContent = getCurrentLang().myButtonshop()
     money.textContent = getCurrentLang().money(moneys)
+
+    if (isReset) {
     gameInput.value = getCurrentLang().ClicksReboot()
+    }
   })
 })
 
