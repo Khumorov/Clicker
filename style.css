@@ -16,8 +16,7 @@
   }
 
   #myButton-shop,
-  #myButton-clear,
-  #myButton {
+  #myButton-clear {
     outline: none;
     background: radial-gradient(circle, rgb(0, 106, 255, 0.5), rgba(2, 50, 118, 0.5));
   }
@@ -48,28 +47,41 @@
     overflow: hidden;
   }
 
-  #DefaultButton {
-    background: radial-gradient(circle, rgb(0, 106, 255, 0.5), rgba(2, 50, 118, 0.5));
+  #DefaultButton,
+  #myButton {
+    background-image: radial-gradient(circle, rgba(190, 105, 35, 0.55), rgba(65, 30, 10, 0.8)), url('./Images/Buttons/dirt.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #GoldButton {
-    background: radial-gradient(circle, rgba(255, 242, 0, 0.5), rgba(118, 112, 2, 0.5));
+    background-image: radial-gradient(circle, rgba(60, 150, 190, 0.55), rgba(15, 45, 65, 0.8)), url('./Images/Buttons/water.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #OrangeButton {
-    background: radial-gradient(circle, rgba(255, 98, 0, 0.5), rgba(118, 43, 2, 0.5));
+    background-image: radial-gradient(circle, rgba(210, 165, 45, 0.55), rgba(75, 50, 10, 0.8)), url('./Images/Buttons/gold.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #PinkButton {
-    background: radial-gradient(circle, rgba(251, 0, 255, 0.5), rgba(97, 2, 118, 0.5));
+    background-image: radial-gradient(circle, rgba(155, 75, 190, 0.55), rgba(50, 15, 65, 0.8)), url('./Images/Buttons/amethyst.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #GrayButton {
-    background: radial-gradient(circle, rgba(109, 108, 109, 0.5), rgba(35, 35, 35, 0.5));
+    background-image: radial-gradient(circle, rgba(90, 100, 115, 0.5), rgba(15, 18, 22, 0.85)), url('./Images/Buttons/obsidian.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #LavaButton {
-    background: radial-gradient(circle, rgba(230, 65, 20, 0.55), rgba(75, 10, 5, 0.85));
+    background-image: radial-gradient(circle, rgba(230, 65, 20, 0.55), rgba(75, 10, 5, 0.85)), url('./Images/Buttons/lava.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #RainbowButton {
@@ -354,7 +366,7 @@
     position: absolute;
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url(./Images/cloud.avif);
+    background: url(./Images/Themes/cloud.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -389,7 +401,7 @@
   }
 
   input:checked + .slider {
-    background: url(./Images/night.avif);
+    background: url(./Images/Themes/night.avif);
     background-size: 40px;
   }
 

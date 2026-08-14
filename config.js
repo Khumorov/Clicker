@@ -60,9 +60,9 @@ export const upgrades = [
       priceTitle:   "DefaultButtonPrice",
       Opisanie:     "OpisanieButtonDefault",
       money:         0,
-      powerMoney:    10000,
+      powerMoney:    1,
       userPower:     1,
-      color:        "radial-gradient(circle, rgba(0, 106, 255, 0.5), rgba(2, 50, 118, 0.5))"
+      color:        "radial-gradient(circle, rgba(190, 105, 35, 0.55), rgba(65, 30, 10, 0.8)), url('./Images/Buttons/dirt.avif')"
     },
     { name:         "gold",    
       unlocked:     false, 
@@ -73,7 +73,7 @@ export const upgrades = [
       money:         1000,   
       powerMoney:    100,  
       userPower:     10, 
-      color:        "radial-gradient(circle, rgba(255, 242, 0, 0.5), rgba(118, 112, 2, 0.5))"
+      color:        "radial-gradient(circle, rgba(60, 150, 190, 0.55), rgba(15, 45, 65, 0.8)), url('./Images/Buttons/water.avif')"
     },
     { name:         "orange",  
       unlocked:     false, 
@@ -84,7 +84,7 @@ export const upgrades = [
       money:         10000,  
       powerMoney:    150, 
       userPower:     20, 
-      color:        "radial-gradient(circle, rgba(255, 98, 0, 0.5), rgba(118, 43, 2, 0.5))"
+      color:        "radial-gradient(circle, rgba(210, 165, 45, 0.55), rgba(75, 50, 10, 0.8)), url('./Images/Buttons/gold.avif')"
     },
     { name:         "pink",    
       unlocked:     false, 
@@ -95,7 +95,7 @@ export const upgrades = [
       money:         50000,  
       powerMoney:    200, 
       userPower:     30, 
-      color:        "radial-gradient(circle, rgba(251, 0, 255, 0.5), rgba(97, 2, 118, 0.5))"
+      color:        "radial-gradient(circle, rgba(155, 75, 190, 0.55), rgba(50, 15, 65, 0.8)), url('./Images/Buttons/amethyst.avif')"
     },
     { name:         "gray",    
       unlocked:     false, 
@@ -106,7 +106,7 @@ export const upgrades = [
       money:         100000,  
       powerMoney:    250, 
       userPower:     40, 
-      color:        "radial-gradient(circle, rgba(109, 108, 109, 0.5), rgba(35, 35, 35, 0.5))"
+      color:        "radial-gradient(circle, rgba(90, 100, 115, 0.5), rgba(15, 18, 22, 0.85)), url('./Images/Buttons/obsidian.avif')"
     },
     { name:         "lava", 
       unlocked:     false, 
@@ -117,7 +117,7 @@ export const upgrades = [
       money:         150000, 
       powerMoney:    300, 
       userPower:     50, 
-      color:        "radial-gradient(circle, rgba(230, 65, 20, 0.55), rgba(75, 10, 5, 0.85))"
+      color:        "radial-gradient(circle, rgba(230, 65, 20, 0.55), rgba(75, 10, 5, 0.85)), url('./Images/Buttons/lava.avif')"
     },
     { name:         "rainbow", 
       unlocked:     false, 

@@ -17,6 +17,12 @@
       gameButton.disabled = false
     }
 
+    export function game_button_style(gameButton) {
+      gameButton.style.backgroundImage = "radial-gradient(circle, rgba(190, 105, 35, 0.55), rgba(65, 30, 10, 0.8)), url('./Images/Buttons/dirt.avif')"
+      gameButton.style.backgroundSize = "cover"
+      gameButton.style.backgroundPosition = "center"
+    }
+
     export function clear_warning_disabled(clearWarning) {
       clearWarning.style.opacity = 0
       clearWarning.style.transition = "0.5s ease"

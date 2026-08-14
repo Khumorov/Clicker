@@ -2,6 +2,7 @@ import {clear_button_style_disabled,
         clear_button_style_enabled, 
         game_button_style_disabled, 
         game_button_style_enabled,
+        game_button_style,
         clear_warning_disabled, 
         clear_warning_enabled, 
         shadow_disabled, 
@@ -151,6 +152,7 @@ function getCurrentLang() {
       clear_button_style_disabled(gameButton_clear)
       game_button_style_enabled(gameButton)
       gameButton.classList.remove("rainbow")
+      game_button_style(gameButton)
       titleBar.textContent = getCurrentLang().statusReboot()
       shadow_disabled(shadow)
       clear_warning_disabled(clearWarning)
@@ -212,7 +214,9 @@ function getCurrentLang() {
       upgrade.userPower
       user_power = upgrade.userPower
       user_power_money= upgrade.powerMoney
-      gameButton.style.background = upgrade.color
+      gameButton.style.backgroundImage = upgrade.color
+      gameButton.style.backgroundSize = "cover"
+      gameButton.style.backgroundPosition = "center"
       document.getElementById(upgrade.lockedIcon).style.display = "none"
       document.getElementById(upgrade.UnlockedIcon).style.display = "inline"
       if (upgrade.free) {
