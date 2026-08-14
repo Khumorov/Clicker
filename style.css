@@ -1,0 +1,402 @@
+
+  body {
+    font-family: sans-serif;
+    color: rgb(255, 255, 255, 0.7);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    gap: 10px;
+    z-index: 1;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  #myButton-shop,
+  #myButton-clear,
+  #myButton {
+    outline: none;
+    background: radial-gradient(circle, rgb(0, 106, 255, 0.5), rgba(2, 50, 118, 0.5));
+  }
+
+  #myButton-shop,
+  #myButton,
+  #myButton-clear,
+  #DefaultButton,
+  #GoldButton,
+  #OrangeButton,
+  #PinkButton,
+  #GrayButton,
+  #RainbowButton,
+  #LavaButton {
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border: solid black 1px;
+    padding: 8px 16px;
+    width: 120px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #DefaultButton {
+    background: radial-gradient(circle, rgb(0, 106, 255, 0.5), rgba(2, 50, 118, 0.5));
+  }
+
+  #GoldButton {
+    background: radial-gradient(circle, rgba(255, 242, 0, 0.5), rgba(118, 112, 2, 0.5));
+  }
+
+  #OrangeButton {
+    background: radial-gradient(circle, rgba(255, 98, 0, 0.5), rgba(118, 43, 2, 0.5));
+  }
+
+  #PinkButton {
+    background: radial-gradient(circle, rgba(251, 0, 255, 0.5), rgba(97, 2, 118, 0.5));
+  }
+
+  #GrayButton {
+    background: radial-gradient(circle, rgba(109, 108, 109, 0.5), rgba(35, 35, 35, 0.5));
+  }
+
+  #LavaButton {
+    background: radial-gradient(circle, rgba(230, 65, 20, 0.55), rgba(75, 10, 5, 0.85));
+  }
+
+  #RainbowButton {
+    animation: rainbow 5s linear infinite;
+  }
+
+  @keyframes rainbow{
+    0%   { background: red; }
+    16%  { background: orange; }
+    33%  { background: yellow; }
+    50%  { background: green; }
+    66%  { background: blue; }
+    83%  { background: violet; }
+    100% { background: red; }
+  }
+
+  #myButton.rainbow {
+    animation: rainbow 5s linear infinite;
+  }
+
+  #DefaultButton,
+  #GoldButton,
+  #OrangeButton,
+  #PinkButton,
+  #GrayButton,
+  #RainbowButton,
+  #LavaButton,
+  #myButton,
+  #myButton-clear,
+  #myButton-shop,
+  .warning-button-yes,
+  .warning-button-no {
+    will-change: transform;
+    transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  #DefaultButton:hover,
+  #GoldButton:hover,
+  #OrangeButton:hover,
+  #PinkButton:hover,
+  #GrayButton:hover,
+  #RainbowButton:hover,
+  #LavaButton:hover,
+  #myButton:hover,
+  #myButton-clear:hover,
+  #myButton-shop:hover,
+  .warning-button-yes:hover,
+  .warning-button-no:hover {
+    transform: scale(1.1)
+  }
+
+  #DefaultButton:active,
+  #GoldButton:active,
+  #OrangeButton:active,
+  #PinkButton:active,
+  #GrayButton:active,
+  #RainbowButton:active,
+  #LavaButton:active,
+  #myButton:active,
+  #myButton-clear:active,
+  #myButton-shop:active,
+  .warning-button-yes:active,
+  .warning-button-no:active {
+    transform: scale(1)
+  }
+
+  .general-input {
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 4px;
+    border: solid black 1px;
+    background: rgb(242, 239, 239, 0.3);
+    backdrop-filter: blur(5px);
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    outline: none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #clearWarning {
+    width: 100%;
+    height: 150px;
+    border: solid black 1px;
+    background:rgba(2, 50, 118, 0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 3;
+  }
+
+  #warningButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .warning-button-yes,
+  .warning-button-no {
+    font-family: 'Courier New', Courier, monospace;
+    border: solid black 1px;
+    width: 90px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #shadow {
+    margin: 0;
+    left: 0;
+    top: 0;
+    background: radial-gradient(rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  #shadow, #clearWarning, #Shop {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #Shop {
+    border: solid black 1px;
+    background:rgba(2, 50, 118, 0.5);
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .money,
+  .box {
+    font-size: 10px;
+    padding: 5px 20px;
+    color: rgb(0, 0, 0);
+  }
+
+  .localization {
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+ .localization-item {
+    color: #999999;
+    transition: color 0.2s;
+  }
+
+ .localization-item.active {
+    color: rgb(0, 0, 0);
+    transition: color 0.2s;
+  }
+
+ .localization-splitter {
+    color: #999999;
+    padding: 0 4px;
+  }
+
+  #buttons-align,
+  #price-align {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-size: 10px;
+  }
+
+  .OpisanieButton {
+    font-size: 10px;
+    color: rgb(0, 0, 0, 0.5);
+  }
+
+  #LockOffDefault,
+  #LockOnGold,
+  #LockOnOrange,
+  #LockOnPink,
+  #LockOnGray,
+  #LockOnRainbow,
+  #LockOnLava  {
+    display: none;
+  }
+
+  #DefaultButtonPrice,
+  #GoldButtonPrice,
+  #OrangeButtonPrice,
+  #PinkButtonPrice,
+  #GrayButtonPrice,
+  #RainbowButtonPrice,
+  #LavaButtonPrice {
+    color: gold;
+  }
+
+  #header {
+    background: rgb(242, 239, 239, 0.4);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    display: flex;
+    padding: 0.5px 10px;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  #spanMoney,
+  #spanBox,
+  #spanLocalization {
+    display: flex;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #GameName {
+    font-size: 20px;
+    font-family: "Sekuya", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  #header-right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #general-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #general-buttons-style {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .switch {
+    position: relative;
+    display: flex;
+    width: 40px;
+    height: 21px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url(./Images/cloud.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider-blur {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    background-size: 60px;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 1.5px;
+    background: rgb(255, 255, 255, 0.6);
+    background-size: 18px;
+    transition: 0.4s;
+    border-radius: 50%;
+    transform: translateX(18px);
+    z-index: 2;
+  }
+
+  input:checked + .slider {
+    background: url(./Images/night.avif);
+    background-size: 40px;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(-1px);
+  }
+
+  #myInput::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }

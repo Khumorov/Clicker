@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Clicker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Sekuya&display=swap" rel="stylesheet">
+<link href="./style.css" rel="stylesheet">
+</head>
+<body>
+<header id="header">
+<h1 id="GameName">
+CLICKER
+</h1>
+<div id="header-right">
+  <label class="switch">
+  <input type="checkbox" id="mySwitch">
+  <span class="slider"></span>
+  <span class="slider-blur"></span>
+</label>
+<button class="localization" id="spanLocalization">
+  <span class="localization-item active">RU</span>
+  <span class="localization-splitter">/</span>
+  <span class="localization-item">EN</span>
+</button>
+<p class="money" id="spanMoney">Деняг: 0$</p>
+<p class="box" id="spanBox">Ваш статус: человек!</p>
+</div>
+</header>
+<div id="shadow"></div>
+<div id="clearWarning">
+  <p id="WarningMessage">Вы точно хотите сбросить прогресс?</p>
+  <div id="warningButtons">
+  <button class="warning-button-yes">да</button>
+  <button class="warning-button-no">нет</button>
+  </div>
+</div>
+<div id="Shop">
+<h1 id="ShopTiitle">Магазин</h1>
+<div id="buttons-align">
+<div>
+<button id="DefaultButton">
+<svg id="LockOffDefault" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnDefault" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="DefaultButtonPrice">Бесплатно</p>
+<p class="OpisanieButton" id="OpisanieButtonDefault">x0 клики</p>
+</div>
+<div>
+<button id="GoldButton">
+<svg id="LockOffGold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnGold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="GoldButtonPrice">Цена: 0$</p>
+<p class="OpisanieButton" id="OpisanieButtonGold">x0 клики</p>
+</div>
+<div>
+<button id="OrangeButton">
+<svg id="LockOffOrange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnOrange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="OrangeButtonPrice">Цена: 0$</p>
+<p class="OpisanieButton" id="OpisanieButtonOrange">x0 клики</p>
+</div>
+<div>
+<button id="PinkButton">
+<svg id="LockOffPink" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnPink" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="PinkButtonPrice">Цена: 0$</p>
+<p class="OpisanieButton" id="OpisanieButtonPink">x0 клики</p>
+</div>
+<div>
+<button id="GrayButton">
+<svg id="LockOffGray" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnGray" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="GrayButtonPrice">Цена: 0$</p>
+<p class="OpisanieButton" id="OpisanieButtonGray">x0 клики</p>
+</div>
+<div>
+<button id="LavaButton">
+<svg id="LockOffLava" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnLava" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="LavaButtonPrice">Цена: 0$</p>
+<p class="OpisanieButton" id="OpisanieButtonLava">x0 клики</p>
+</div>
+<div>
+<button id="RainbowButton">
+<svg id="LockOffRainbow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25V4.5" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<svg id="LockOnRainbow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 10" id="Lock-Open--Streamline-Micro" height="10" width="10">
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M7.5 4.5h-5a1 1 0 0 0 -1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-3a1 1 0 0 0 -1 -1" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M2.75 4.5V2.75A2.25 2.25 0 0 1 5 0.5v0a2.25 2.25 0 0 1 2.25 2.25" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 1 0 -0.75" stroke-width="1"></path>
+  <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M5 7.375a0.375 0.375 0 1 0 0 -0.75" stroke-width="1"></path>
+</svg>
+<span class="ButtonTitle">Кнопка</span>
+</button>
+<p id="RainbowButtonPrice">Цена: 0$</p>
+<p class="OpisanieButton" id="OpisanieButtonRainbow">x0 клики</p>
+</div>
+</div>
+</div>
+<div id="general-block">
+<div id="general-buttons-style">
+<button id="myButton-shop">Магазин</button>
+<button id="myButton">Кнопка</button>
+<button id="myButton-clear">Сброс</button>
+</div>
+<input type="text" class="general-input" id="myInput" placeholder="Здесь что-то будет" readonly>
+</div>
+<audio id="ClickSoundBuy" src="./Sounds/Sweep.mp3"></audio>
+<script type="module" src="./main.js"></script>
+<script src="./Tools/three.min.js"></script>
+<script src="./Tools/vanta.clouds.min.js"></script>
+<script type="module" src="./bg.js"></script>
+</body>
+</html>
