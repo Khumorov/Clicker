@@ -373,7 +373,7 @@
     position: absolute;
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url(./Images/Themes/cloud.avif);
+    background: url('./Images/Themes/cloud.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -408,7 +408,7 @@
   }
 
   input:checked + .slider {
-    background: url(./Images/Themes/night.avif);
+    background: url('./Images/Themes/night.avif');
     background-size: 40px;
   }
 
