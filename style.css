@@ -132,6 +132,7 @@
   #myButton-shop:hover,
   .warning-button-yes:hover,
   .warning-button-no:hover {
+    will-change: transform;
     transform: scale(1.1)
   }
 
@@ -160,10 +161,6 @@
     color: rgba(0, 0, 0, 0.5);
     width: 100%;
     outline: none;
-  }
-
-  .hidden {
-    display: none;
   }
 
   #clearWarning {
@@ -264,8 +261,7 @@
     padding: 0 4px;
   }
 
-  #buttons-align,
-  #price-align {
+  #buttons-align {
     width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -417,4 +413,20 @@
 
   #myInput::placeholder {
     color: rgba(0, 0, 0, 0.5);
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0px 5px;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 9px;
+    color: rgb(0, 0, 0);
+    gap: 2px;
   }

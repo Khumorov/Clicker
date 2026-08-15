@@ -6,6 +6,8 @@ const SpanBoxColor = document.getElementById("spanBox")
 const InputColor = document.getElementById("myInput")
 const localization = document.getElementById("spanLocalization")
 const ShopTitleColor = document.getElementById("ShopTiitle")
+const Footer = document.getElementById("Footer")
+const GithubIcon = document.getElementById("github-icon")
 const ClickSoundSweep = new Audio("./Sounds/UI/Sweep.mp3")
 const MoneyColor = document.querySelector(".money")
 const BoxColor = document.querySelector(".box")
@@ -36,6 +38,8 @@ Switch.addEventListener("change", () => {
   InputColor.style.background = "rgba(27, 42, 74, 0.5)"
   MoneyColor.style.color = "rgb(200, 210, 235)"
   BoxColor.style.color = "rgb(200, 210, 235)"
+  Footer.style.color = "rgb(200, 210, 235)"
+  GithubIcon.style.fill = "rgb(200, 210, 235)"
   ClickSoundSweep.currentTime = 0
   ClickSoundSweep.play()
 
@@ -69,6 +73,8 @@ Switch.addEventListener("change", () => {
   InputColor.style.background = "rgb(242, 239, 239, 0.3)"
   MoneyColor.style.color = "rgb(0, 0, 0)"
   BoxColor.style.color = "rgb(0, 0, 0)"
+  Footer.style.color = "rgb(0, 0, 0)"
+  GithubIcon.style.fill = "rgb(0, 0, 0)"
   ClickSoundSweep.currentTime = 0
   ClickSoundSweep.play()
 

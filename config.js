@@ -12,8 +12,8 @@ export const game_achievements = [
 ];
 
 export const game_settings = [
-    { name: "minimumForEnabled", count: 1, status: "человек" },
-    { name: "maximumForDisabled", count: 150000, color: "red", status: "Вы достигли максимума!" }
+    { name: "minimumForEnabled",  count: 1,      status: "человек" },
+    { name: "maximumForDisabled", count: 150000, status: "Вы достигли максимума!", color: "red" }
 ]
 
 export const upgrades = [
