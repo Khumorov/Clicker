@@ -1,7 +1,7 @@
 
   body {
     font-family: sans-serif;
-    color: rgb(255, 255, 255, 0.7);
+    color: rgb(255, 255, 255);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -24,14 +24,16 @@
   #myButton-shop,
   #myButton,
   #myButton-clear,
-  #DefaultButton,
+  #DirtButton,
+  #WaterButton,
   #GoldButton,
-  #OrangeButton,
-  #PinkButton,
-  #GrayButton,
-  #RainbowButton,
-  #LavaButton {
+  #AmethystButton,
+  #ObsidianButton,
+  #LavaButton,
+  #RainbowButton {
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: rgb(0, 0, 0, 0.7);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     border: solid black 1px;
     padding: 8px 16px;
@@ -47,32 +49,32 @@
     overflow: hidden;
   }
 
-  #DefaultButton,
+  #DirtButton,
   #myButton {
     background-image: radial-gradient(circle, rgba(190, 105, 35, 0.55), rgba(65, 30, 10, 0.8)), url('./Images/Buttons/dirt.avif');
     background-size: cover;
     background-position: center;
   }
 
-  #GoldButton {
+  #WaterButton {
     background-image: radial-gradient(circle, rgba(60, 150, 190, 0.55), rgba(15, 45, 65, 0.8)), url('./Images/Buttons/water.avif');
     background-size: cover;
     background-position: center;
   }
 
-  #OrangeButton {
+  #GoldButton {
     background-image: radial-gradient(circle, rgba(210, 165, 45, 0.55), rgba(75, 50, 10, 0.8)), url('./Images/Buttons/gold.avif');
     background-size: cover;
     background-position: center;
   }
 
-  #PinkButton {
+  #AmethystButton {
     background-image: radial-gradient(circle, rgba(155, 75, 190, 0.55), rgba(50, 15, 65, 0.8)), url('./Images/Buttons/amethyst.avif');
     background-size: cover;
     background-position: center;
   }
 
-  #GrayButton {
+  #ObsidianButton {
     background-image: radial-gradient(circle, rgba(90, 100, 115, 0.5), rgba(15, 18, 22, 0.85)), url('./Images/Buttons/obsidian.avif');
     background-size: cover;
     background-position: center;
@@ -102,13 +104,13 @@
     animation: rainbow 5s linear infinite;
   }
 
-  #DefaultButton,
+  #DirtButton,
+  #WaterButton,
   #GoldButton,
-  #OrangeButton,
-  #PinkButton,
-  #GrayButton,
-  #RainbowButton,
+  #AmethystButton,
+  #ObsidianButton,
   #LavaButton,
+  #RainbowButton,
   #myButton,
   #myButton-clear,
   #myButton-shop,
@@ -118,13 +120,13 @@
     transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  #DefaultButton:hover,
+  #DirtButton:hover,
+  #WaterButton:hover,
   #GoldButton:hover,
-  #OrangeButton:hover,
-  #PinkButton:hover,
-  #GrayButton:hover,
-  #RainbowButton:hover,
+  #AmethystButton:hover,
+  #ObsidianButton:hover,
   #LavaButton:hover,
+  #RainbowButton:hover,
   #myButton:hover,
   #myButton-clear:hover,
   #myButton-shop:hover,
@@ -133,13 +135,13 @@
     transform: scale(1.1)
   }
 
-  #DefaultButton:active,
+  #DirtButton:active,
+  #WaterButton:active,
   #GoldButton:active,
-  #OrangeButton:active,
-  #PinkButton:active,
-  #GrayButton:active,
-  #RainbowButton:active,
+  #AmethystButton:active,
+  #ObsidianButton:active,
   #LavaButton:active,
+  #RainbowButton:active,
   #myButton:active,
   #myButton-clear:active,
   #myButton-shop:active,
@@ -195,6 +197,10 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    will-change: auto;
+    background-image: radial-gradient(circle, rgba(214, 213, 210, 0.55), rgba(65, 63, 60, 0.8)), url('./Images/Buttons/metal.avif');
+    background-size: cover;
+    background-position: center;
   }
 
   #shadow {
@@ -274,23 +280,23 @@
     color: rgb(0, 0, 0, 0.5);
   }
 
-  #LockOffDefault,
+  #LockOffDirt,
+  #LockOnWater,
   #LockOnGold,
-  #LockOnOrange,
-  #LockOnPink,
-  #LockOnGray,
-  #LockOnRainbow,
-  #LockOnLava  {
+  #LockOnAmethyst,
+  #LockOnObsidian,
+  #LockOnLava,
+  #LockOnRainbow  {
     display: none;
   }
 
-  #DefaultButtonPrice,
+  #DirtButtonPrice,
+  #WaterButtonPrice,
   #GoldButtonPrice,
-  #OrangeButtonPrice,
-  #PinkButtonPrice,
-  #GrayButtonPrice,
-  #RainbowButtonPrice,
-  #LavaButtonPrice {
+  #AmethystButtonPrice,
+  #ObsidianButtonPrice,
+  #LavaButtonPrice,
+  #RainbowButtonPrice {
     color: gold;
   }
 

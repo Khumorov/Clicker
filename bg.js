@@ -91,4 +91,4 @@ Switch.addEventListener("change", () => {
   speed: 1
   })
  }
-})
+}) 

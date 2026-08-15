@@ -1,4 +1,4 @@
-   export function clear_button_style_disabled(gameButton_clear) {
+    export function clear_button_style_disabled(gameButton_clear) {
       gameButton_clear.disabled = true
       gameButton_clear.style.background = "radial-gradient(circle, rgba(255, 0, 0, 0.5), rgba(118, 2, 2, 0.5))"
     }

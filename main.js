@@ -23,34 +23,41 @@ import {
     shadow,
     shop,
     money,
-    DefaultClicks,
+    DirtClicks,
+    WaterClicks,
     GoldClicks,
-    OrangeClicks,
-    PinkClicks,
-    GrayClicks,
-    RainbowClicks,
+    AmethystClicks,
+    ObsidianClicks,
     LavaClicks,
-    LockOnDefault,
-    LockOffDefault,
+    RainbowClicks,
+    LockOnDirt,
+    LockOffDirt,
+    LockOnWater,
+    LockOffWater,
     LockOnGold,
     LockOffGold,
-    LockOnOrange,
-    LockOffOrange,
-    LockOnPink,
-    LockOffPink,
-    LockOnGray,
-    LockOffGray,
-    LockOnRainbow,
-    LockOffRainbow,
+    LockOnAmethyst,
+    LockOffAmethyst,
+    LockOnObsidian,
+    LockOffObsidian,
     LockOnLava,
     LockOffLava,
-    DefaultButtonPrice,
+    LockOnRainbow,
+    LockOffRainbow,
+    DirtButtonPrice,
+    WaterButtonPrice,
     GoldButtonPrice,
-    OrangeButtonPrice,
-    PinkButtonPrice,
-    GrayButtonPrice,
-    RainbowButtonPrice,
+    AmethystButtonPrice,
+    ObsidianButtonPrice,
     LavaButtonPrice,
+    RainbowButtonPrice,
+    OpisanieDirt,
+    OpisanieWater,
+    OpisanieGold,
+    OpisanieAmethyst,
+    OpisanieObsidian,
+    OpisanieLava,
+    OpisanieRainbow,
     titleBar,
     ClickSound,
     ClickSoundDeny,
@@ -63,14 +70,7 @@ import {
     localizationItem,
     WarningMessage,
     ShopTitle,
-    ButtonTitle,
-    OpisanieDefault,
-    OpisanieGold,
-    OpisanieOrange,
-    OpisaniePink,
-    OpisanieGray,
-    OpisanieRainbow,
-    OpisanieLava
+    ButtonTitle
 } from "./elements.js"
 
 import {
@@ -91,9 +91,12 @@ function getCurrentLang() {
     let user_taps = 0
     let moneys = 0
 
-    const defaultUpgrade = upgrades.find(upgrade => upgrade.name === "default")
-    let user_power = defaultUpgrade.userPower
-    let user_power_money = defaultUpgrade.powerMoney
+    const dirtUpgrade = upgrades.find(upgrade => upgrade.name === "dirt")
+    let user_power = dirtUpgrade.userPower
+    let user_power_money = dirtUpgrade.powerMoney
+
+    let Sound = new Audio(`./Sounds/Buttons/${dirtUpgrade.Sound}`)
+    Sound.volume = 0.5
 
     clear_button_style_disabled(gameButton_clear)
 
@@ -152,6 +155,8 @@ function getCurrentLang() {
       clear_button_style_disabled(gameButton_clear)
       game_button_style_enabled(gameButton)
       gameButton.classList.remove("rainbow")
+      Sound = new Audio(`./Sounds/Buttons/${dirtUpgrade.Sound}`)
+      Sound.volume = 0.5
       game_button_style(gameButton)
       titleBar.textContent = getCurrentLang().statusReboot()
       shadow_disabled(shadow)
@@ -171,7 +176,7 @@ function getCurrentLang() {
     opisanieButton.textContent = getCurrentLang().opisanie(upgrade.userPower)
 
     if (upgrade.free) {
-      priceElement.textContent = getCurrentLang().DefaultButtonPrice()
+      priceElement.textContent = getCurrentLang().DirtButtonPrice()
     } else if (!upgrade.unlocked) {
       priceElement.textContent = getCurrentLang()[upgrade.priceTitle](upgrade.money)
     } else {
@@ -180,18 +185,18 @@ function getCurrentLang() {
   })
 
       ShopTitle.textContent = getCurrentLang().ShopTitle()
-      DefaultButtonPrice.textContent = getCurrentLang().DefaultButtonPrice()
+      DirtButtonPrice.textContent = getCurrentLang().DirtButtonPrice()
 
       shadow_enabled(shadow)
       shop_enabled(shop)
     }
 
+    let unlocked_water = false
     let unlocked_gold = false
-    let unlocked_orange = false
-    let unlocked_pink = false
-    let unlocked_gray = false
-    let unlocked_rainbow = false
+    let unlocked_amethyst = false
+    let unlocked_obsidian = false
     let unlocked_lava = false
+    let unlocked_rainbow = false
 
     function upgradeButtons(name) {
       const upgrade = upgrades.find(upgrade => upgrade.name === name)
@@ -210,17 +215,19 @@ function getCurrentLang() {
         ClickSoundSelect.currentTime = 0
         ClickSoundSelect.play()
       }
-      upgrade.powerMoney
-      upgrade.userPower
       user_power = upgrade.userPower
       user_power_money= upgrade.powerMoney
       gameButton.style.backgroundImage = upgrade.color
       gameButton.style.backgroundSize = "cover"
       gameButton.style.backgroundPosition = "center"
+
+      Sound = new Audio(`./Sounds/Buttons/${upgrade.Sound}`)
+      Sound.volume = 0.5
+
       document.getElementById(upgrade.lockedIcon).style.display = "none"
       document.getElementById(upgrade.UnlockedIcon).style.display = "inline"
       if (upgrade.free) {
-      priceElement.textContent = getCurrentLang().DefaultButtonPrice()
+      priceElement.textContent = getCurrentLang().DirtButtonPrice()
       } else {
       priceElement.textContent = getCurrentLang().purchased()
       }
@@ -249,13 +256,13 @@ document.getElementById("myButton").addEventListener("click", mainLogic)
 document.getElementById("myButton-clear").addEventListener("click", mainLogic_clear)
 document.getElementById("myButton-shop").addEventListener("click", mainLogic_shop)
 document.getElementById("shadow").addEventListener("click", shadowCloseWindow)
-document.getElementById("DefaultButton").addEventListener("click", () => upgradeButtons("default"))
+document.getElementById("DirtButton").addEventListener("click", () => upgradeButtons("dirt"))
+document.getElementById("WaterButton").addEventListener("click", () => upgradeButtons("water"))
 document.getElementById("GoldButton").addEventListener("click", () => upgradeButtons("gold"))
-document.getElementById("OrangeButton").addEventListener("click", () => upgradeButtons("orange"))
-document.getElementById("PinkButton").addEventListener("click", () => upgradeButtons("pink"))
-document.getElementById("GrayButton").addEventListener("click", () => upgradeButtons("gray"))
-document.getElementById("RainbowButton").addEventListener("click", () => upgradeButtons("rainbow"))
+document.getElementById("AmethystButton").addEventListener("click", () => upgradeButtons("amethyst"))
+document.getElementById("ObsidianButton").addEventListener("click", () => upgradeButtons("obsidian"))
 document.getElementById("LavaButton").addEventListener("click", () => upgradeButtons("lava"))
+document.getElementById("RainbowButton").addEventListener("click", () => upgradeButtons("rainbow"))
 document.querySelector(".warning-button-yes").addEventListener("click", clear_warning_yes)
 document.querySelector(".warning-button-no").addEventListener("click", clear_warning_no)
 
@@ -308,8 +315,8 @@ localizationItem.forEach((button) => {
 })
 
 gameButton.addEventListener("click", () => {
-  ClickSound.currentTime = 0
-  ClickSound.play()
+  Sound.currentTime = 0
+  Sound.play()
 })
 
 gameButton_clear.addEventListener("click", () => {
