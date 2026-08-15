@@ -151,6 +151,11 @@
     transform: scale(1)
   }
 
+  .LockStyle {
+    margin-right: 2px;
+    opacity: 0.8;
+  }
+
   .general-input {
     box-sizing: border-box;
     padding: 8px;

@@ -310,3 +310,9 @@ clearWarningButtonNo.addEventListener("click", () => {
   ClickSound.currentTime = 0
   ClickSound.play()
 })
+
+document.addEventListener("click", (event) => {
+  if (event.target.tagName === "BUTTON") {
+    event.target.blur()
+  }
+})
