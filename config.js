@@ -1,5 +1,5 @@
 export const game_achievements = [
-    { min: 0,      max: 999,    color: "#8a8a8a", status: "Новичок" },
+    { min: 1,      max: 999,    color: "#8a8a8a", status: "Новичок" },
     { min: 1000,   max: 4999,   color: "#32cd32", status: "Ученик" },
     { min: 5000,   max: 9999,   color: "#4b0082", status: "Мастер" },
     { min: 10000,  max: 24999,  color: "#ffd700", status: "Легенда" },
