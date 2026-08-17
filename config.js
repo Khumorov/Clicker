@@ -1,19 +1,21 @@
+// у системы статусов пока нет применения, оно просто существует
+
 export const game_achievements = [
-    { min: 1,      max: 999,    color: "#8a8a8a", status: "Новичок" },
-    { min: 1000,   max: 4999,   color: "#32cd32", status: "Ученик" },
-    { min: 5000,   max: 9999,   color: "#4b0082", status: "Мастер" },
-    { min: 10000,  max: 24999,  color: "#ffd700", status: "Легенда" },
-    { min: 25000,  max: 49999,  color: "#ff1493", status: "Мифический" },
-    { min: 50000,  max: 74999,  color: "#ff4500", status: "Герой" },
-    { min: 75000,  max: 89999,  color: "#8a2be2", status: "Титан" },
-    { min: 90000,  max: 94999,  color: "#00ffff", status: "Бессмертный" },
-    { min: 95000,  max: 99999,  color: "#ffd700", status: "Не придумал еще 1" },
-    { min: 100000, max: 100000, color: "#ff0000", status: "Не придумал еще 2" }
+    { min: 1,      max: 999,    status: "10" },
+    { min: 1000,   max: 4999,   status: "9" },
+    { min: 5000,   max: 9999,   status: "8" },
+    { min: 10000,  max: 24999,  status: "7" },
+    { min: 25000,  max: 49999,  status: "6" },
+    { min: 50000,  max: 74999,  status: "5" },
+    { min: 75000,  max: 89999,  status: "4" },
+    { min: 90000,  max: 94999,  status: "3" },
+    { min: 95000,  max: 99999,  status: "2" },
+    { min: 100000, max: 100000, status: "1" }
 ];
 
 export const game_settings = [
-    { name: "minimumForEnabled",  count: 1,      status: "человек" },
-    { name: "maximumForDisabled", count: 150000, status: "Вы достигли максимума!", color: "red" }
+    { name: "minimumForEnabled",  count: 1,          status: "человек" },
+    { name: "maximumForDisabled", count: 1000000000, status: "Вы достигли максимума!", color: "red" }
 ]
 
 export const upgrades = [

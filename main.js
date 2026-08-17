@@ -42,11 +42,14 @@ import {
     localizationItem,
     WarningMessage,
     ShopTitle,
-    ButtonTitle
+    ButtonTitle,
+    switch_theme,
+    DefaultLocalization
 } from "./elements.js"
 
 import {
-    currentLocalizationColor
+    currentLocalizationColor,
+    resetTheme
 } from "./bg.js"
 
 import {
@@ -58,6 +61,18 @@ function getCurrentLang() {
   const currentLangCode = activeLang.textContent
   return localizations[currentLangCode]
 }
+
+  const saved_lang = localStorage.getItem("localization")
+  if (saved_lang) {
+    localizationItem.forEach((button) => {
+      button.classList.remove("active")
+      button.style.color = ""
+      if (button.dataset.lang === saved_lang) {
+        button.classList.add("active")
+        button.style.color = currentLocalizationColor()
+      }
+    })
+  }
 
     let game = {
       moneys: 0,
@@ -192,6 +207,15 @@ function getCurrentLang() {
     }
       user_power = dirtUpgrade.userPower
       user_power_money = dirtUpgrade.powerMoney
+      localizationItem.forEach((button) => {
+      button.classList.remove("active")
+      button.style.color = ""
+      localStorage.removeItem("localization")
+      DefaultLocalization.classList.add("active")
+      updateUI()
+      })
+
+      resetTheme()
       isReset = true
 
       saveGame()
@@ -325,6 +349,7 @@ document.querySelector(".warning-button-no").addEventListener("click", clear_war
 
 localizationItem.forEach((button) => {
   button.addEventListener("click", () => {
+    localStorage.setItem("localization", button.dataset.lang)
     localizationItem.forEach(btn => {
     btn.classList.remove("active")
     btn.style.color = ""

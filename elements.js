@@ -24,5 +24,7 @@
     export const titleBar = document.querySelector(".box")
     export const clearWarningButtonNo = document.querySelector(".warning-button-no")
     export const clearWarningButtonYes = document.querySelector(".warning-button-yes")
+    export const switch_theme = document.getElementById("mySwitch")
     export const localizationItem = document.querySelectorAll(".localization-item")
+    export const DefaultLocalization = document.querySelector(".localization-item.active")
     export const ButtonTitle = document.querySelectorAll(".ButtonTitle")

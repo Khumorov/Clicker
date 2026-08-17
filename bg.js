@@ -26,7 +26,7 @@ let currentFon = VANTA.CLOUDS({
   minWidth: 200.00
   })
 
-Switch.addEventListener("change", () => {
+  function updateTheme() {
   if (Switch.checked) {
 
   HeaderColor.style.background = "rgba(10, 17, 40, 0.5)"
@@ -40,8 +40,6 @@ Switch.addEventListener("change", () => {
   BoxColor.style.color = "rgb(200, 210, 235)"
   Footer.style.color = "rgb(200, 210, 235)"
   GithubIcon.style.fill = "rgb(200, 210, 235)"
-  ClickSoundSweep.currentTime = 0
-  ClickSoundSweep.play()
 
   document.querySelectorAll(".localization-item.active").forEach(langColor => {
     langColor.style.color = currentLocalizationColor()
@@ -75,8 +73,6 @@ Switch.addEventListener("change", () => {
   BoxColor.style.color = "rgb(0, 0, 0)"
   Footer.style.color = "rgb(0, 0, 0)"
   GithubIcon.style.fill = "rgb(0, 0, 0)"
-  ClickSoundSweep.currentTime = 0
-  ClickSoundSweep.play()
 
   document.querySelectorAll(".localization-item.active").forEach((langColor) => {
     langColor.style.color = currentLocalizationColor()
@@ -97,4 +93,25 @@ Switch.addEventListener("change", () => {
   speed: 1
   })
  }
-}) 
+}
+
+const saved_theme = localStorage.getItem("theme")
+
+if (saved_theme !== null) {
+  Switch.checked = saved_theme === "true"
+}
+
+updateTheme()
+
+Switch.addEventListener("change", () => {
+  localStorage.setItem("theme", Switch.checked)
+  ClickSoundSweep.currentTime = 0
+  ClickSoundSweep.play()
+  updateTheme()
+})
+
+export function resetTheme() {
+  localStorage.removeItem("theme")
+  Switch.checked = false
+  updateTheme()
+}
