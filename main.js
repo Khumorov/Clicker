@@ -23,13 +23,6 @@ import {
     shadow,
     shop,
     money,
-    DirtButtonPrice,
-    WaterButtonPrice,
-    GoldButtonPrice,
-    AmethystButtonPrice,
-    ObsidianButtonPrice,
-    LavaButtonPrice,
-    RainbowButtonPrice,
     titleBar,
     ClickSound,
     ClickSoundDeny,
@@ -55,7 +48,12 @@ import {
 import {
     localizations
 } from "./localization.js"
-    
+
+import {
+  createShop
+} from "./shop.js"
+
+createShop()
 function getCurrentLang() {
   const activeLang = document.querySelector(".localization-item.active")
   const currentLangCode = activeLang.textContent
@@ -140,6 +138,18 @@ function getCurrentLang() {
 
     loadGame()
     updateUI()
+    lockIcons()
+
+function lockIcons() {
+    upgrades.forEach(upgrade => {
+        const unlocked = upgrade.name === "dirt"
+        ? true
+        : upgrade.unlocked || game.upgrades[`unlocked_${upgrade.name}`]
+
+        document.getElementById(upgrade.lockedIcon).style.display = unlocked ? "none" : "inline"
+        document.getElementById(upgrade.UnlockedIcon).style.display = unlocked ? "inline" : "none"
+    })
+}
 
     const dirtUpgrade = upgrades.find(upgrade => upgrade.name === "dirt")
     let user_power = dirtUpgrade.userPower
@@ -213,6 +223,7 @@ function getCurrentLang() {
       localStorage.removeItem("localization")
       DefaultLocalization.classList.add("active")
       updateUI()
+      lockIcons()
       })
 
       resetTheme()
@@ -249,7 +260,7 @@ function getCurrentLang() {
 
     const unlocked = upgrade.name === "dirt" 
     ? true 
-    : game.upgrades[`unlocked_${upgrade.name}`]
+    : upgrade.unlocked || game.upgrades[`unlocked_${upgrade.name}`]
 
     if (upgrade.free) {
       priceElement.textContent = getCurrentLang().DirtButtonPrice()
@@ -273,7 +284,7 @@ function getCurrentLang() {
       
         const unlocked = name === "dirt" 
         ? true 
-        : game.upgrades[`unlocked_${name}`]
+        : upgrade.unlocked || game.upgrades[`unlocked_${name}`]
 
         if (!unlocked) {
         if (game.moneys < upgrade.money) {
@@ -337,13 +348,11 @@ document.getElementById("myButton").addEventListener("click", mainLogic)
 document.getElementById("myButton-clear").addEventListener("click", mainLogic_clear)
 document.getElementById("myButton-shop").addEventListener("click", mainLogic_shop)
 document.getElementById("shadow").addEventListener("click", shadowCloseWindow)
-document.getElementById("DirtButton").addEventListener("click", () => upgradeButtons("dirt"))
-document.getElementById("WaterButton").addEventListener("click", () => upgradeButtons("water"))
-document.getElementById("GoldButton").addEventListener("click", () => upgradeButtons("gold"))
-document.getElementById("AmethystButton").addEventListener("click", () => upgradeButtons("amethyst"))
-document.getElementById("ObsidianButton").addEventListener("click", () => upgradeButtons("obsidian"))
-document.getElementById("LavaButton").addEventListener("click", () => upgradeButtons("lava"))
-document.getElementById("RainbowButton").addEventListener("click", () => upgradeButtons("rainbow"))
+
+upgrades.forEach(upgrade => {
+  document.getElementById(upgrade.name).addEventListener("click", () => upgradeButtons(upgrade.name))
+})
+
 document.querySelector(".warning-button-yes").addEventListener("click", clear_warning_yes)
 document.querySelector(".warning-button-no").addEventListener("click", clear_warning_no)
 

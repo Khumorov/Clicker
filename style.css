@@ -24,13 +24,7 @@
   #myButton-shop,
   #myButton,
   #myButton-clear,
-  #DirtButton,
-  #WaterButton,
-  #GoldButton,
-  #AmethystButton,
-  #ObsidianButton,
-  #LavaButton,
-  #RainbowButton {
+  .ShopButtonStyle {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
     color: rgb(0, 0, 0, 0.7);
@@ -49,44 +43,13 @@
     overflow: hidden;
   }
 
-  #DirtButton,
   #myButton {
     background-image: radial-gradient(circle, rgba(190, 105, 35, 0.55), rgba(65, 30, 10, 0.8)), url('./Images/Buttons/dirt.avif');
     background-size: cover;
     background-position: center;
   }
 
-  #WaterButton {
-    background-image: radial-gradient(circle, rgba(60, 150, 190, 0.55), rgba(15, 45, 65, 0.8)), url('./Images/Buttons/water.avif');
-    background-size: cover;
-    background-position: center;
-  }
-
-  #GoldButton {
-    background-image: radial-gradient(circle, rgba(210, 165, 45, 0.55), rgba(75, 50, 10, 0.8)), url('./Images/Buttons/gold.avif');
-    background-size: cover;
-    background-position: center;
-  }
-
-  #AmethystButton {
-    background-image: radial-gradient(circle, rgba(155, 75, 190, 0.55), rgba(50, 15, 65, 0.8)), url('./Images/Buttons/amethyst.avif');
-    background-size: cover;
-    background-position: center;
-  }
-
-  #ObsidianButton {
-    background-image: radial-gradient(circle, rgba(90, 100, 115, 0.5), rgba(15, 18, 22, 0.85)), url('./Images/Buttons/obsidian.avif');
-    background-size: cover;
-    background-position: center;
-  }
-
-  #LavaButton {
-    background-image: radial-gradient(circle, rgba(230, 65, 20, 0.55), rgba(75, 10, 5, 0.85)), url('./Images/Buttons/lava.avif');
-    background-size: cover;
-    background-position: center;
-  }
-
-  #RainbowButton {
+  #rainbow {
     animation: rainbow 5s linear infinite;
   }
 
@@ -104,29 +67,17 @@
     animation: rainbow 5s linear infinite;
   }
 
-  #DirtButton,
-  #WaterButton,
-  #GoldButton,
-  #AmethystButton,
-  #ObsidianButton,
-  #LavaButton,
-  #RainbowButton,
   #myButton,
   #myButton-clear,
   #myButton-shop,
+  .ShopButton,
   .warning-button-yes,
   .warning-button-no {
     will-change: transform;
     transition: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  #DirtButton:hover,
-  #WaterButton:hover,
-  #GoldButton:hover,
-  #AmethystButton:hover,
-  #ObsidianButton:hover,
-  #LavaButton:hover,
-  #RainbowButton:hover,
+  .ShopButton:hover,
   #myButton:hover,
   #myButton-clear:hover,
   #myButton-shop:hover,
@@ -136,13 +87,7 @@
     transform: scale(1.1)
   }
 
-  #DirtButton:active,
-  #WaterButton:active,
-  #GoldButton:active,
-  #AmethystButton:active,
-  #ObsidianButton:active,
-  #LavaButton:active,
-  #RainbowButton:active,
+  .ShopButton:active,
   #myButton:active,
   #myButton-clear:active,
   #myButton-shop:active,
@@ -279,26 +224,6 @@
   .OpisanieButton {
     font-size: 10px;
     color: rgb(0, 0, 0, 0.5);
-  }
-
-  #LockOffDirt,
-  #LockOnWater,
-  #LockOnGold,
-  #LockOnAmethyst,
-  #LockOnObsidian,
-  #LockOnLava,
-  #LockOnRainbow  {
-    display: none;
-  }
-
-  #DirtButtonPrice,
-  #WaterButtonPrice,
-  #GoldButtonPrice,
-  #AmethystButtonPrice,
-  #ObsidianButtonPrice,
-  #LavaButtonPrice,
-  #RainbowButtonPrice {
-    color: gold;
   }
 
   #header {

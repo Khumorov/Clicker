@@ -1,21 +1,58 @@
 // у системы статусов пока нет применения, оно просто существует
 
 export const game_achievements = [
-    { min: 1,      max: 999,    status: "10" },
-    { min: 1000,   max: 4999,   status: "9" },
-    { min: 5000,   max: 9999,   status: "8" },
-    { min: 10000,  max: 24999,  status: "7" },
-    { min: 25000,  max: 49999,  status: "6" },
-    { min: 50000,  max: 74999,  status: "5" },
-    { min: 75000,  max: 89999,  status: "4" },
-    { min: 90000,  max: 94999,  status: "3" },
-    { min: 95000,  max: 99999,  status: "2" },
-    { min: 100000, max: 100000, status: "1" }
+    { min: 1,      
+      max: 999,    
+      status: "10" 
+    },
+    { min: 1000,   
+      max: 4999,   
+      status: "9" 
+    },
+    { min: 5000,   
+      max: 9999,   
+      status: "8" 
+    },
+    { min: 10000,  
+      max: 24999,  
+      status: "7" 
+    },
+    { min: 25000,  
+      max: 49999,  
+      status: "6" 
+    },
+    { min: 50000,  
+      max: 74999,  
+      status: "5" 
+    },
+    { min: 75000,  
+      max: 89999,  
+      status: "4" 
+    },
+    { min: 90000,  
+      max: 94999,  
+      status: "3" 
+    },
+    { min: 95000,  
+      max: 99999,  
+      status: "2" 
+    },
+    { min: 100000, 
+      max: 100000, 
+      status: "1" 
+    }
 ];
 
 export const game_settings = [
-    { name: "minimumForEnabled",  count: 1,          status: "человек" },
-    { name: "maximumForDisabled", count: 1000000000, status: "Вы достигли максимума!", color: "red" }
+    { name: "minimumForEnabled",  
+      count: 1,          
+      status: "человек" 
+    },
+    { name: "maximumForDisabled", 
+      count: 1000000000, status: 
+      "Вы достигли максимума!", 
+      color: "red" 
+    }
 ]
 
 export const upgrades = [
@@ -33,7 +70,8 @@ export const upgrades = [
       color:        "radial-gradient(circle, rgba(190, 105, 35, 0.55), rgba(65, 30, 10, 0.8)), url('./Images/Buttons/dirt.avif')"
     },
     { name:         "water",    
-      unlocked:     false, 
+      unlocked:     false,
+      free:         false, 
       lockedIcon:   "LockOffWater", 
       UnlockedIcon: "LockOnWater", 
       priceTitle:   "WaterButtonPrice",
@@ -46,6 +84,7 @@ export const upgrades = [
     },
     { name:         "gold",  
       unlocked:     false, 
+      free:         false, 
       lockedIcon:   "LockOffGold", 
       UnlockedIcon: "LockOnGold", 
       priceTitle:   "GoldButtonPrice",
@@ -58,6 +97,7 @@ export const upgrades = [
     },
     { name:         "amethyst",    
       unlocked:     false, 
+      free:         false, 
       lockedIcon:   "LockOffAmethyst", 
       UnlockedIcon: "LockOnAmethyst", 
       priceTitle:   "AmethystButtonPrice",
@@ -70,6 +110,7 @@ export const upgrades = [
     },
     { name:         "obsidian",    
       unlocked:     false, 
+      free:         false, 
       lockedIcon:   "LockOffObsidian", 
       UnlockedIcon: "LockOnObsidian", 
       priceTitle:   "ObsidianButtonPrice",
@@ -81,7 +122,8 @@ export const upgrades = [
       color:        "radial-gradient(circle, rgba(90, 100, 115, 0.5), rgba(15, 18, 22, 0.85)), url('./Images/Buttons/obsidian.avif')"
     },
     { name:         "lava", 
-      unlocked:     false, 
+      unlocked:     false,
+      free:         false,  
       lockedIcon:   "LockOffLava", 
       UnlockedIcon: "LockOnLava", 
       priceTitle:   "LavaButtonPrice",
@@ -94,6 +136,7 @@ export const upgrades = [
     },
     { name:         "rainbow", 
       unlocked:     false, 
+      free:         false, 
       lockedIcon:   "LockOffRainbow", 
       UnlockedIcon: "LockOnRainbow", 
       priceTitle:   "RainbowButtonPrice",
