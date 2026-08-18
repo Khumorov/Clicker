@@ -1,3 +1,5 @@
+import { upgrades } from "./config.js"
+
 export const localizations = {
 
     RU: {
@@ -13,12 +15,7 @@ export const localizations = {
         No:                     () => "Нет",
         ShopTitle:              () => "Магазин",
         DirtButtonPrice:        () => "Бесплатно",
-        WaterButtonPrice:       (waterPrice) => `Цена: ${waterPrice}$`,
-        GoldButtonPrice:        (goldPrice) => `Цена: ${goldPrice}$`,
-        AmethystButtonPrice:    (amethystPrice) => `Цена: ${amethystPrice}$`,
-        ObsidianButtonPrice:    (obsidianPrice) => `Цена: ${obsidianPrice}$`,
-        LavaButtonPrice:        (lavaPrice) => `Цена: ${lavaPrice}$`,
-        RainbowButtonPrice:     (rainbowPrice) => `Цена: ${rainbowPrice}$`,
+        price:                  (name) => `Цена: ${name}$`,
         myButtonshop:           () => "Магазин",
         myButton:               () => "Кнопка",
         gameButtonClear:        () => "Сброс",
@@ -39,12 +36,7 @@ export const localizations = {
         No:                     () => "No",
         ShopTitle:              () => "Shop",
         DirtButtonPrice:        () => "Free",
-        WaterButtonPrice:       (waterPrice) => `Price: ${waterPrice}$`,
-        GoldButtonPrice:        (goldPrice) => `Price: ${goldPrice}$`,
-        AmethystButtonPrice:    (amethystPrice) => `Price: ${amethystPrice}$`,
-        ObsidianButtonPrice:    (obsidianPrice) => `Price: ${obsidianPrice}$`,
-        LavaButtonPrice:        (lavaPrice) => `Price: ${lavaPrice}$`,
-        RainbowButtonPrice:     (rainbowPrice) => `Price: ${rainbowPrice}$`,
+        price:                  (name) => `Price: ${name}$`,
         myButtonshop:           () => "Shop",
         myButton:               () => "Button",
         gameButtonClear:        () => "Reset",

@@ -265,7 +265,7 @@ function lockIcons() {
     if (upgrade.free) {
       priceElement.textContent = getCurrentLang().DirtButtonPrice()
     } else if (!unlocked) {
-      priceElement.textContent = getCurrentLang()[upgrade.priceTitle](upgrade.money)
+      priceElement.textContent = getCurrentLang().price(upgrade.money)
     } else {
       priceElement.textContent = getCurrentLang().purchased()
     }

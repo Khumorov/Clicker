@@ -145,7 +145,7 @@
     cursor: pointer;
     font-size: 16px;
     will-change: auto;
-    background-image: radial-gradient(circle, rgba(214, 213, 210, 0.55), rgba(65, 63, 60, 0.8)), url('./Images/Buttons/metal.avif');
+    background-image: radial-gradient(circle, rgba(214, 213, 210, 0.55), rgba(65, 63, 60, 0.8)), url('./Images/Buttons/UI/iron.avif');
     background-size: cover;
     background-position: center;
   }
@@ -172,12 +172,14 @@
     background:rgba(2, 50, 118, 0.5);
     position: fixed;
     width: 100%;
+    max-height: 100vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    overflow: hidden;
     z-index: 3;
   }
 
@@ -213,12 +215,22 @@
 
   #buttons-align {
     width: 100%;
+    max-height: 60vh;
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     font-size: 10px;
+    scrollbar-width: none;
+    overflow-y: auto;
+    padding: 25px;
+    mask-image: linear-gradient(to bottom, 
+    transparent 0%, 
+    black 15%, 
+    black 85%, 
+    transparent 100%)
   }
 
   .OpisanieButton {
